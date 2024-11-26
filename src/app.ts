@@ -10,7 +10,11 @@ import { globalErrorHandler } from "./middlewares/globalErrorHandler";
 import { Config } from "./config";
 
 const app = express();
-const ALLOWED_DOMAINS = [Config.CLIENT_UI_DOMAIN, Config.ADMIN_UI_DOMAIN];
+const ALLOWED_DOMAINS = [
+    Config.CLIENT_UI_DOMAIN,
+    Config.ADMIN_UI_DOMAIN,
+    "http://localhost:8000",
+];
 
 app.use(cors({ origin: ALLOWED_DOMAINS as string[], credentials: true }));
 
